@@ -11,7 +11,12 @@ func main() {
 	src := prepareArray()
 	fmt.Printf("%v\n", src)
 
+	sort(&src)
+
 	fmt.Printf("%v\n", src)
+}
+
+func sort(*[]int32) {
 }
 
 func prepareArray() []int32 {
