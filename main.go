@@ -5,7 +5,7 @@ import (
 	"math/rand"
 )
 
-const n = 10
+const n = 100
 
 func main() {
 	src := prepareArray()
@@ -23,10 +23,12 @@ func sortInsertion(src *[]int32) {
 		current := result[i]
 
 		for j := i - 1; j >= 0; j-- {
-			if result[j] > current {
-				result[j+1] = result[j]
-				result[j] = current
+			if result[j] <= current {
+				break
 			}
+
+			result[j+1] = result[j]
+			result[j] = current
 		}
 	}
 }
