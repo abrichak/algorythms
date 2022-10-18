@@ -11,12 +11,24 @@ func main() {
 	src := prepareArray()
 	fmt.Printf("%v\n", src)
 
-	sort(&src)
+	sortInsertion(&src)
 
 	fmt.Printf("%v\n", src)
 }
 
-func sort(*[]int32) {
+func sortInsertion(src *[]int32) {
+	result := *src
+
+	for i := 1; i < n; i++ {
+		current := result[i]
+
+		for j := i - 1; j >= 0; j-- {
+			if result[j] > current {
+				result[j+1] = result[j]
+				result[j] = current
+			}
+		}
+	}
 }
 
 func prepareArray() []int32 {
