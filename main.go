@@ -5,10 +5,16 @@ import (
 	"math/rand"
 )
 
+const (
+	bestCase = iota
+	averageCase
+	worstCase
+)
+
 const n = 100
 
 func main() {
-	src := prepareArray()
+	src := prepareArray(averageCase)
 	fmt.Printf("%v\n", src)
 
 	sortInsertion(&src)
@@ -33,11 +39,18 @@ func sortInsertion(src *[]int32) {
 	}
 }
 
-func prepareArray() []int32 {
+func prepareArray(caseType int) []int32 {
 	result := make([]int32, n)
 
 	for i := 0; i < n; i++ {
-		result[i] = rand.Int31n(n)
+		switch caseType {
+		case bestCase:
+			result[i] = int32(10 * i)
+		case worstCase:
+			result[i] = 10*n - int32(10*i)
+		case averageCase:
+			result[i] = rand.Int31n(n)
+		}
 	}
 
 	return result
