@@ -5,34 +5,61 @@ import (
 	"testing"
 )
 
-func BenchmarkSortingBest(b *testing.B) {
+func BenchmarkSortingBestN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(bestCase)
+		src := prepareSlice(n, bestCase)
 		sortInsertion(&src)
 	}
 }
 
-func BenchmarkSortingAverage(b *testing.B) {
+func BenchmarkSortingAverageN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(averageCase)
+		src := prepareSlice(n, averageCase)
 		sortInsertion(&src)
 	}
 }
 
-func BenchmarkSortingWorst(b *testing.B) {
+func BenchmarkSortingWorstN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(worstCase)
+		src := prepareSlice(n, worstCase)
 		sortInsertion(&src)
 	}
 }
 
-func BenchmarkOnlyPrepareSliceAverage(b *testing.B) {
+func BenchmarkOnlyPrepareSliceAverageN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_ = prepareSlice(averageCase)
+		_ = prepareSlice(n, averageCase)
 	}
 }
 
-func TestSliceIsSorted(t *testing.T) {
+func BenchmarkSortingBest10N(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		src := prepareSlice(10*n, bestCase)
+		sortInsertion(&src)
+	}
+}
+
+func BenchmarkSortingAverage10N(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		src := prepareSlice(10*n, averageCase)
+		sortInsertion(&src)
+	}
+}
+
+func BenchmarkSortingWorst10N(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		src := prepareSlice(10*n, worstCase)
+		sortInsertion(&src)
+	}
+}
+
+func BenchmarkOnlyPrepareSliceAverage10N(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = prepareSlice(10*n, averageCase)
+	}
+}
+
+func TestSortInsertion(t *testing.T) {
 	src := make([]int32, n)
 	for i := 0; i < n; i++ {
 		src[i] = int32(n - i - 1)
