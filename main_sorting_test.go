@@ -1,30 +1,46 @@
 package main
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func BenchmarkSortingBest(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareArray(bestCase)
+		src := prepareSlice(bestCase)
 		sortInsertion(&src)
 	}
 }
 
 func BenchmarkSortingAverage(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareArray(averageCase)
+		src := prepareSlice(averageCase)
 		sortInsertion(&src)
 	}
 }
 
 func BenchmarkSortingWorst(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareArray(worstCase)
+		src := prepareSlice(worstCase)
 		sortInsertion(&src)
 	}
 }
 
-func BenchmarkOnlyPrepareArrayAverage(b *testing.B) {
+func BenchmarkOnlyPrepareSliceAverage(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_ = prepareArray(averageCase)
+		_ = prepareSlice(averageCase)
+	}
+}
+
+func TestSliceIsSorted(t *testing.T) {
+	src := make([]int32, n)
+	for i := 0; i < n; i++ {
+		src[i] = int32(n - i - 1)
+	}
+
+	sortInsertion(&src)
+
+	for i := 0; i < n; i++ {
+		assert.Equal(t, int32(i), src[i])
 	}
 }

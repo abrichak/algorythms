@@ -14,7 +14,7 @@ const (
 const n = 100
 
 func main() {
-	src := prepareArray(averageCase)
+	src := prepareSlice(averageCase)
 	fmt.Printf("%v\n", src)
 
 	sortInsertion(&src)
@@ -39,7 +39,7 @@ func sortInsertion(src *[]int32) {
 	}
 }
 
-func prepareArray(caseType int) []int32 {
+func prepareSlice(caseType int) []int32 {
 	result := make([]int32, n)
 
 	for i := 0; i < n; i++ {
