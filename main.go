@@ -22,10 +22,16 @@ func main() {
 	fmt.Printf("%v\n", src)
 }
 
+// Insertion sort: asymptotic approximations:
+// O(sqr(n))
+// ~ sqr(n)
+// o(n)
 func sortInsertion(src *[]int32) {
 	result := *src
 	elementsNumber := len(result)
 
+	// Loop invariant: at the beginning of every iteration, the sub-array result[0, i-1] consists of elements
+	// that were initially in result[0, i-1] and now are sorted
 	for i := 1; i < elementsNumber; i++ {
 		current := result[i]
 
