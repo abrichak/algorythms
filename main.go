@@ -17,7 +17,8 @@ func main() {
 	src := prepareSlice(n, averageCase)
 	fmt.Printf("%v\n", src)
 
-	sortInsertion(&src)
+	//sortInsertion(&src)
+	sortMerge(&src, 0, len(src)-1)
 
 	fmt.Printf("%v\n", src)
 }
@@ -46,6 +47,19 @@ func sortInsertion(src *[]int32) {
 	}
 }
 
+// Merge sort: asymptotic approximations:
+// ~ (n * lg n)  (for all cases)
+func sortMerge(src *[]int32, startIndex int, endIndex int) {
+	if startIndex < endIndex {
+		centrumIndex := (startIndex + endIndex) / 2
+
+		sortMerge(src, startIndex, centrumIndex)
+		sortMerge(src, centrumIndex+1, endIndex)
+
+		merge(src, startIndex, centrumIndex, endIndex)
+	}
+}
+
 func prepareSlice(elementsNumber int32, caseType int) []int32 {
 	var i int32
 
@@ -63,4 +77,33 @@ func prepareSlice(elementsNumber int32, caseType int) []int32 {
 	}
 
 	return result
+}
+
+func merge(src *[]int32, startIndex int, centrumIndex int, endIndex int) {
+	result := *src
+
+	left := make([]int32, centrumIndex-startIndex+1)
+	for i := startIndex; i <= centrumIndex; i++ {
+		left[i-startIndex] = result[i]
+	}
+
+	right := make([]int32, endIndex-centrumIndex)
+	for i := centrumIndex + 1; i <= endIndex; i++ {
+		right[i-centrumIndex-1] = result[i]
+	}
+
+	lenLeft := len(left)
+	lenRight := len(right)
+	i := 0
+	j := 0
+
+	for k := startIndex; k <= endIndex; k++ {
+		if i >= lenLeft || (j < lenRight && left[i] > right[j]) {
+			result[k] = right[j]
+			j++
+		} else {
+			result[k] = left[i]
+			i++
+		}
+	}
 }

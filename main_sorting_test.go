@@ -71,3 +71,16 @@ func TestSortInsertion(t *testing.T) {
 		assert.Equal(t, int32(i), src[i])
 	}
 }
+
+func TestSortMerge(t *testing.T) {
+	src := make([]int32, n)
+	for i := 0; i < n; i++ {
+		src[i] = int32(n - i - 1)
+	}
+
+	sortMerge(&src, 0, len(src)-1)
+
+	for i := 0; i < n; i++ {
+		assert.Equal(t, int32(i), src[i])
+	}
+}
