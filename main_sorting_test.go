@@ -7,146 +7,146 @@ import (
 
 func BenchmarkSortingBestN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(n, bestCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(N, bestCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingAverageN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(n, averageCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(N, averageCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingWorstN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(n, worstCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(N, worstCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkOnlyPrepareSliceAverageN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_ = prepareSlice(n, averageCase)
+		_ = prepareSlice(N, averageCase)
 	}
 }
 
 func BenchmarkSortingBest10N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(10*n, bestCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(10*N, bestCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingAverage10N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(10*n, averageCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(10*N, averageCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingWorst10N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(10*n, worstCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(10*N, worstCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkOnlyPrepareSliceAverage10N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_ = prepareSlice(10*n, averageCase)
+		_ = prepareSlice(10*N, averageCase)
 	}
 }
 
 func BenchmarkSortingBest100N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(100*n, bestCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(100*N, bestCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingAverage100N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(100*n, averageCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(100*N, averageCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingWorst100N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(100*n, worstCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(100*N, worstCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkOnlyPrepareSliceAverage100N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_ = prepareSlice(100*n, averageCase)
+		_ = prepareSlice(100*N, averageCase)
 	}
 }
 
 func BenchmarkSortingBest1000N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(1000*n, bestCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(1000*N, bestCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingAverage1000N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(1000*n, averageCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(1000*N, averageCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingWorst1000N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		src := prepareSlice(1000*n, worstCase)
-		//sortInsertion(&src)
-		sortMerge(&src, 0, len(src)-1)
+		src := prepareSlice(1000*N, worstCase)
+		sortInsertion(&src)
+		//sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkOnlyPrepareSliceAverage1000N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		_ = prepareSlice(1000*n, averageCase)
+		_ = prepareSlice(1000*N, averageCase)
 	}
 }
 
 func TestSortInsertion(t *testing.T) {
-	src := make([]int32, n)
-	for i := 0; i < n; i++ {
-		src[i] = int32(n - i - 1)
+	src := make([]int32, N)
+	for i := 0; i < N; i++ {
+		src[i] = int32(N - i - 1)
 	}
 
 	sortInsertion(&src)
 
-	for i := 0; i < n; i++ {
+	for i := 0; i < N; i++ {
 		assert.Equal(t, int32(i), src[i])
 	}
 }
 
 func TestSortMerge(t *testing.T) {
-	src := make([]int32, n)
-	for i := 0; i < n; i++ {
-		src[i] = int32(n - i - 1)
+	src := make([]int32, N)
+	for i := 0; i < N; i++ {
+		src[i] = int32(N - i - 1)
 	}
 
 	sortMerge(&src, 0, len(src)-1)
 
-	for i := 0; i < n; i++ {
+	for i := 0; i < N; i++ {
 		assert.Equal(t, int32(i), src[i])
 	}
 }

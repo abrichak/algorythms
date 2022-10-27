@@ -1,0 +1,22 @@
+goos: linux
+goarch: amd64
+pkg: algorythms
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkSortingBestN-8                   	  259561	      4710 ns/op
+BenchmarkSortingAverageN-8                	  137379	      8276 ns/op
+BenchmarkSortingWorstN-8                  	  260475	      4664 ns/op
+BenchmarkOnlyPrepareSliceAverageN-8       	  703282	      1507 ns/op
+BenchmarkSortingBest10N-8                 	   21691	     60423 ns/op
+BenchmarkSortingAverage10N-8              	   12362	     96133 ns/op
+BenchmarkSortingWorst10N-8                	   21105	     53735 ns/op
+BenchmarkOnlyPrepareSliceAverage10N-8     	   76940	     15265 ns/op
+BenchmarkSortingBest100N-8                	    1801	    650648 ns/op
+BenchmarkSortingAverage100N-8             	    1048	   1235516 ns/op
+BenchmarkSortingWorst100N-8               	    1767	    684837 ns/op
+BenchmarkOnlyPrepareSliceAverage100N-8    	    7842	    154192 ns/op
+BenchmarkSortingBest1000N-8               	     128	   8146481 ns/op
+BenchmarkSortingAverage1000N-8            	      80	  15474315 ns/op
+BenchmarkSortingWorst1000N-8              	     139	   8999080 ns/op
+BenchmarkOnlyPrepareSliceAverage1000N-8   	     770	   1548212 ns/op
+PASS
+ok  	algorythms	26.437s

@@ -11,10 +11,10 @@ const (
 	worstCase
 )
 
-const n = 100
+const N = 100
 
 func main() {
-	src := prepareSlice(n, averageCase)
+	src := prepareSlice(N, averageCase)
 	fmt.Printf("%v\n", src)
 
 	//sortInsertion(&src)
@@ -24,9 +24,9 @@ func main() {
 }
 
 // Insertion sort: asymptotic approximations:
-// O(sqr(n))
-// ~ sqr(n)
-// o(n)
+// O(sqr(N))
+// ~ sqr(N)
+// o(N)
 func sortInsertion(src *[]int32) {
 	result := *src
 	elementsNumber := len(result)
@@ -48,7 +48,7 @@ func sortInsertion(src *[]int32) {
 }
 
 // Merge sort: asymptotic approximations:
-// ~ (n * lg n)  (for all cases)
+// ~ (N * lg N)  (for all cases)
 func sortMerge(src *[]int32, startIndex int, endIndex int) {
 	if startIndex < endIndex {
 		centrumIndex := (startIndex + endIndex) / 2
