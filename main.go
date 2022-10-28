@@ -18,7 +18,7 @@ func main() {
 	src := prepareSlice(N, averageCase)
 	fmt.Printf("%v\n", src)
 
-	//sortInsertion(&src)
+	//sortInsertion(&src, 0, len(src)-1)
 	//sortMerge(&src, 0, len(src)-1)
 	sortMergeWithGoroutines(&src, 0, len(src)-1)
 
@@ -29,16 +29,15 @@ func main() {
 // O(sqr(N))
 // ~ sqr(N)
 // o(N)
-func sortInsertion(src *[]int32) {
+func sortInsertion(src *[]int32, startIndex int, endIndex int) {
 	result := *src
-	elementsNumber := len(result)
 
-	// Loop invariant: at the beginning of every iteration, the sub-array result[0, i-1] consists of elements
-	// that were initially in result[0, i-1] and now are sorted
-	for i := 1; i < elementsNumber; i++ {
+	// Loop invariant: at the beginning of every iteration, the sub-array result[startIndex, i-1] consists of elements
+	// that were initially in result[startIndex, i-1] and now are sorted
+	for i := startIndex + 1; i <= endIndex; i++ {
 		current := result[i]
 
-		for j := i - 1; j >= 0; j-- {
+		for j := i - 1; j >= startIndex; j-- {
 			if result[j] <= current {
 				break
 			}
