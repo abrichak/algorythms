@@ -2,21 +2,21 @@ goos: linux
 goarch: amd64
 pkg: algorythms
 cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-BenchmarkSortingBestN-8                   	 4270593	       291.5 ns/op
-BenchmarkSortingAverageN-8                	  302533	      3449 ns/op
-BenchmarkSortingWorstN-8                  	  359200	      3078 ns/op
-BenchmarkOnlyPrepareSliceAverageN-8       	  715275	      1523 ns/op
-BenchmarkSortingBest10N-8                 	  654596	      2620 ns/op
-BenchmarkSortingAverage10N-8              	    7713	    156188 ns/op
-BenchmarkSortingWorst10N-8                	    4202	    274556 ns/op
-BenchmarkOnlyPrepareSliceAverage10N-8     	   78928	     15130 ns/op
-BenchmarkSortingBest100N-8                	   54616	     25202 ns/op
-BenchmarkSortingAverage100N-8             	      78	  13708212 ns/op
-BenchmarkSortingWorst100N-8               	      43	  27131196 ns/op
-BenchmarkOnlyPrepareSliceAverage100N-8    	    7729	    154045 ns/op
-BenchmarkSortingBest1000N-8               	    7923	    235442 ns/op
-BenchmarkSortingAverage1000N-8            	       1	1373528442 ns/op
-BenchmarkSortingWorst1000N-8              	       1	2709676343 ns/op
-BenchmarkOnlyPrepareSliceAverage1000N-8   	     768	   1585064 ns/op
+BenchmarkSortingBestN-8                   	 4068187	       301.9 ns/op	     416 B/op	       1 allocs/op
+BenchmarkSortingAverageN-8                	  314826	      3526 ns/op	     416 B/op	       1 allocs/op
+BenchmarkSortingWorstN-8                  	  365218	      3178 ns/op	     416 B/op	       1 allocs/op
+BenchmarkOnlyPrepareSliceAverageN-8       	  636765	      1593 ns/op	     416 B/op	       1 allocs/op
+BenchmarkSortingBest10N-8                 	  556596	      2333 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkSortingAverage10N-8              	    7777	    155473 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkSortingWorst10N-8                	    4094	    275466 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkOnlyPrepareSliceAverage10N-8     	   78669	     14839 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkSortingBest100N-8                	   53751	     26101 ns/op	   40960 B/op	       1 allocs/op
+BenchmarkSortingAverage100N-8             	      86	  13641554 ns/op	   40960 B/op	       1 allocs/op
+BenchmarkSortingWorst100N-8               	      43	  27015041 ns/op	   40960 B/op	       1 allocs/op
+BenchmarkOnlyPrepareSliceAverage100N-8    	    7302	    155356 ns/op	   40960 B/op	       1 allocs/op
+BenchmarkSortingBest1000N-8               	    6555	    247274 ns/op	  401410 B/op	       1 allocs/op
+BenchmarkSortingAverage1000N-8            	       1	1356399078 ns/op	  401408 B/op	       1 allocs/op
+BenchmarkSortingWorst1000N-8              	       1	2695674407 ns/op	  401408 B/op	       1 allocs/op
+BenchmarkOnlyPrepareSliceAverage1000N-8   	     778	   1557797 ns/op	  401408 B/op	       1 allocs/op
 PASS
-ok  	algorythms	23.755s
+ok  	algorythms	24.894s

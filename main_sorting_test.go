@@ -8,24 +8,24 @@ import (
 func BenchmarkSortingBestN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(N, bestCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingAverageN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(N, averageCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingWorstN(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(N, worstCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
@@ -38,24 +38,24 @@ func BenchmarkOnlyPrepareSliceAverageN(b *testing.B) {
 func BenchmarkSortingBest10N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(10*N, bestCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingAverage10N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(10*N, averageCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingWorst10N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(10*N, worstCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
@@ -68,24 +68,24 @@ func BenchmarkOnlyPrepareSliceAverage10N(b *testing.B) {
 func BenchmarkSortingBest100N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(100*N, bestCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingAverage100N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(100*N, averageCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingWorst100N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(100*N, worstCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
@@ -98,24 +98,24 @@ func BenchmarkOnlyPrepareSliceAverage100N(b *testing.B) {
 func BenchmarkSortingBest1000N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(1000*N, bestCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingAverage1000N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(1000*N, averageCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
 func BenchmarkSortingWorst1000N(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		src := prepareSlice(1000*N, worstCase)
-		sortInsertion(&src)
-		//sortMerge(&src, 0, len(src)-1)
+		//sortInsertion(&src)
+		sortMerge(&src, 0, len(src)-1)
 	}
 }
 
