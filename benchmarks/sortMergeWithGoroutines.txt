@@ -1,0 +1,22 @@
+goos: linux
+goarch: amd64
+pkg: algorythms
+cpu: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+BenchmarkSortingBestN-8                   	  172729	      6627 ns/op	    3560 B/op	     203 allocs/op
+BenchmarkSortingAverageN-8                	  101078	     12200 ns/op	    3560 B/op	     203 allocs/op
+BenchmarkSortingWorstN-8                  	  178905	      6741 ns/op	    3560 B/op	     203 allocs/op
+BenchmarkOnlyPrepareSliceAverageN-8       	  701806	      1568 ns/op	     416 B/op	       1 allocs/op
+BenchmarkSortingBest10N-8                 	   27951	     42754 ns/op	   44808 B/op	    2003 allocs/op
+BenchmarkSortingAverage10N-8              	   15385	     77704 ns/op	   44808 B/op	    2003 allocs/op
+BenchmarkSortingWorst10N-8                	   28470	     43170 ns/op	   44808 B/op	    2003 allocs/op
+BenchmarkOnlyPrepareSliceAverage10N-8     	   78134	     15265 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkSortingBest100N-8                	    3200	    394119 ns/op	  604694 B/op	   20003 allocs/op
+BenchmarkSortingAverage100N-8             	    1515	    783669 ns/op	  604689 B/op	   20003 allocs/op
+BenchmarkSortingWorst100N-8               	    2876	    393015 ns/op	  604695 B/op	   20003 allocs/op
+BenchmarkOnlyPrepareSliceAverage100N-8    	    7332	    154881 ns/op	   40960 B/op	       1 allocs/op
+BenchmarkSortingBest1000N-8               	     266	   4641241 ns/op	 7715776 B/op	  200003 allocs/op
+BenchmarkSortingAverage1000N-8            	     130	   9130383 ns/op	 7715741 B/op	  200003 allocs/op
+BenchmarkSortingWorst1000N-8              	     253	   4724341 ns/op	 7715772 B/op	  200003 allocs/op
+BenchmarkOnlyPrepareSliceAverage1000N-8   	     769	   1586384 ns/op	  401408 B/op	       1 allocs/op
+PASS
+ok  	algorythms	23.345s

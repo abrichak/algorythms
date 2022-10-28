@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"sync"
 )
 
 const (
@@ -18,7 +19,8 @@ func main() {
 	fmt.Printf("%v\n", src)
 
 	//sortInsertion(&src)
-	sortMerge(&src, 0, len(src)-1)
+	//sortMerge(&src, 0, len(src)-1)
+	sortMergeWithGoroutines(&src, 0, len(src)-1)
 
 	fmt.Printf("%v\n", src)
 }
@@ -56,6 +58,28 @@ func sortMerge(src *[]int32, startIndex int, endIndex int) {
 		sortMerge(src, startIndex, centrumIndex)
 		sortMerge(src, centrumIndex+1, endIndex)
 
+		merge(src, startIndex, centrumIndex, endIndex)
+	}
+}
+
+func sortMergeWithGoroutines(src *[]int32, startIndex int, endIndex int) {
+	if startIndex < endIndex {
+		centrumIndex := (startIndex + endIndex) / 2
+
+		var wg sync.WaitGroup
+		wg.Add(2)
+
+		go func() {
+			defer wg.Done()
+			sortMerge(src, startIndex, centrumIndex)
+		}()
+
+		go func() {
+			defer wg.Done()
+			sortMerge(src, centrumIndex+1, endIndex)
+		}()
+
+		wg.Wait()
 		merge(src, startIndex, centrumIndex, endIndex)
 	}
 }
