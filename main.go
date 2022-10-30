@@ -86,12 +86,12 @@ func sortMergeWithGoroutines(src *[]int32, startIndex int, endIndex int) {
 
 		go func() {
 			defer wg.Done()
-			sortMerge(src, startIndex, centrumIndex)
+			sortMergeWithGoroutines(src, startIndex, centrumIndex)
 		}()
 
 		go func() {
 			defer wg.Done()
-			sortMerge(src, centrumIndex+1, endIndex)
+			sortMergeWithGoroutines(src, centrumIndex+1, endIndex)
 		}()
 
 		wg.Wait()
