@@ -20,7 +20,8 @@ func main() {
 
 	//sortInsertion(&src, 0, len(src)-1)
 	//sortMerge(&src, 0, len(src)-1)
-	sortMergeWithGoroutines(&src, 0, len(src)-1)
+	//sortMergeWithGoroutines(&src, 0, len(src)-1)
+	sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
 
 	fmt.Printf("%v\n", src)
 }
@@ -58,6 +59,21 @@ func sortMerge(src *[]int32, startIndex int, endIndex int) {
 		sortMerge(src, centrumIndex+1, endIndex)
 
 		merge(src, startIndex, centrumIndex, endIndex)
+	}
+}
+
+func sortMergeCombinedWithSortInsertion(src *[]int32, startIndex int, endIndex int) {
+	if startIndex < endIndex {
+		if endIndex-startIndex > 500 {
+			centrumIndex := (startIndex + endIndex) / 2
+
+			sortMergeCombinedWithSortInsertion(src, startIndex, centrumIndex)
+			sortMergeCombinedWithSortInsertion(src, centrumIndex+1, endIndex)
+
+			merge(src, startIndex, centrumIndex, endIndex)
+		} else {
+			sortInsertion(src, startIndex, endIndex)
+		}
 	}
 }
 
