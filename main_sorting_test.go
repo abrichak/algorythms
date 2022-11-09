@@ -1,6 +1,7 @@
 package main
 
 import (
+	"algorythms/sort"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -195,6 +196,19 @@ func TestSortMergeCombinedWithSortInsertion(t *testing.T) {
 	}
 
 	sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+
+	for i := 0; i < N; i++ {
+		assert.Equal(t, int32(i), src[i])
+	}
+}
+
+func TestSortHeap(t *testing.T) {
+	src := make([]int32, N)
+	for i := 0; i < N; i++ {
+		src[i] = int32(N - i - 1)
+	}
+
+	sort.HeapSort(&src)
 
 	for i := 0; i < N; i++ {
 		assert.Equal(t, int32(i), src[i])

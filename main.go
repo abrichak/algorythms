@@ -1,6 +1,7 @@
 package main
 
 import (
+	"algorythms/sort"
 	"fmt"
 	"math/rand"
 	"sync"
@@ -21,7 +22,8 @@ func main() {
 	//sortInsertion(&src, 0, len(src)-1)
 	//sortMerge(&src, 0, len(src)-1)
 	//sortMergeWithGoroutines(&src, 0, len(src)-1)
-	sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+	//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+	sort.HeapSort(&src)
 
 	fmt.Printf("%v\n", src)
 }
