@@ -11,8 +11,9 @@ func BenchmarkSortingBestN(b *testing.B) {
 		src := prepareSlice(N, bestCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -21,8 +22,9 @@ func BenchmarkSortingAverageN(b *testing.B) {
 		src := prepareSlice(N, averageCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -31,8 +33,9 @@ func BenchmarkSortingWorstN(b *testing.B) {
 		src := prepareSlice(N, worstCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -47,8 +50,9 @@ func BenchmarkSortingBest10N(b *testing.B) {
 		src := prepareSlice(10*N, bestCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -57,8 +61,9 @@ func BenchmarkSortingAverage10N(b *testing.B) {
 		src := prepareSlice(10*N, averageCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -67,8 +72,9 @@ func BenchmarkSortingWorst10N(b *testing.B) {
 		src := prepareSlice(10*N, worstCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -83,8 +89,9 @@ func BenchmarkSortingBest100N(b *testing.B) {
 		src := prepareSlice(100*N, bestCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -93,8 +100,9 @@ func BenchmarkSortingAverage100N(b *testing.B) {
 		src := prepareSlice(100*N, averageCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -103,8 +111,9 @@ func BenchmarkSortingWorst100N(b *testing.B) {
 		src := prepareSlice(100*N, worstCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -119,8 +128,9 @@ func BenchmarkSortingBest1000N(b *testing.B) {
 		src := prepareSlice(1000*N, bestCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -129,8 +139,9 @@ func BenchmarkSortingAverage1000N(b *testing.B) {
 		src := prepareSlice(1000*N, averageCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
@@ -139,8 +150,9 @@ func BenchmarkSortingWorst1000N(b *testing.B) {
 		src := prepareSlice(1000*N, worstCase)
 		//sortInsertion(&src, 0, len(src)-1)
 		//sortMerge(&src, 0, len(src)-1)
-		sortMergeWithGoroutines(&src, 0, len(src)-1)
+		//sortMergeWithGoroutines(&src, 0, len(src)-1)
 		//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
+		sort.HeapSort(&src)
 	}
 }
 
