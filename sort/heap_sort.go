@@ -29,7 +29,7 @@ func buildMaxHeap(src *[]int32) {
 
 	// Loop invariant: at the beginning of every iteration, every node result[i+1], result[i+2], ..., result[N-1]
 	// is a root of a non-increasing heap
-	for i := len(result) / 2; i >= 0; i-- {
+	for i := heapSize >> 1; i >= 0; i-- {
 		maxHeapify(src, heapSize, i)
 	}
 }
@@ -59,9 +59,9 @@ func maxHeapify(src *[]int32, heapSize int, i int) {
 }
 
 func left(i int) int {
-	return 2 * i
+	return i << 1
 }
 
 func right(i int) int {
-	return 2*i + 1
+	return (i << 1) | 1
 }
