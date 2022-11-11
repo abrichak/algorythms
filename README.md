@@ -28,3 +28,4 @@ The aim of the project is to implement and compare different algorithms includin
 
   The benchmarks for different algorithms and their comparison are located in the `benchmarks` directory.
 
+5. The function for every algorithm has a comment including the type of asymptotic approximation. To get more exact formulas, you can use time benchmarks for different array sizes and any online tool for regression analysis. The file `benchmarks/timeApproximation.md` contains such formulas.
