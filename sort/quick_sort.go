@@ -1,5 +1,9 @@
 package sort
 
+import (
+	"math/rand"
+)
+
 // QuickSort asymptotic approximations:
 // O(sqr(N))
 // ~(N * lg N)
@@ -17,7 +21,11 @@ func QuickSort(src *[]int32, startIndex int, endIndex int) {
 // O(N)
 func partition(src *[]int32, startIndex int, endIndex int) int {
 	result := *src
-	baseValue := result[endIndex]
+
+	baseIndex := startIndex + rand.Intn(endIndex-startIndex+1)
+	baseValue := result[baseIndex]
+	result[baseIndex] = result[endIndex]
+	result[endIndex] = baseValue
 
 	i := startIndex - 1
 
