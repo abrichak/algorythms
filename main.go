@@ -23,7 +23,8 @@ func main() {
 	//sortMerge(&src, 0, len(src)-1)
 	//sortMergeWithGoroutines(&src, 0, len(src)-1)
 	//sortMergeCombinedWithSortInsertion(&src, 0, len(src)-1)
-	sort.HeapSort(&src)
+	//sort.HeapSort(&src)
+	sort.QuickSort(&src, 0, len(src)-1)
 
 	fmt.Printf("%v\n", src)
 }

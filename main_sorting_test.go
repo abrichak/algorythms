@@ -226,3 +226,16 @@ func TestSortHeap(t *testing.T) {
 		assert.Equal(t, int32(i), src[i])
 	}
 }
+
+func TestSortQuick(t *testing.T) {
+	src := make([]int32, N)
+	for i := 0; i < N; i++ {
+		src[i] = int32(N - i - 1)
+	}
+
+	sort.QuickSort(&src, 0, N-1)
+
+	for i := 0; i < N; i++ {
+		assert.Equal(t, int32(i), src[i])
+	}
+}
